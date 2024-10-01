@@ -36,6 +36,20 @@
 	</properties>
 
 	<developers>
+		<developer> 
+			<id>AT01</id> 
+			<name>Ignacio Gutierrez Serrera</name> 
+			<email>igngutser@alum.us.es</email> 
+			<url> https://es.wikipedia.org/wiki/Alan_Turing</url> 
+			<roles> 
+			<role>developer</role> 
+			</roles> 
+			<properties> 
+			<picUrl> 
+			https://cdn.britannica.com/81/191581-050-8C0A8CD3/Alan-Turing.jpg 
+			</picUrl> 
+			</properties> 
+		</developer> 
 		<developer>
 			<id>JAP</id>
 			<name>J. A. Parejo</name>

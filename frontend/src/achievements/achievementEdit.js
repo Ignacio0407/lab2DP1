@@ -10,7 +10,8 @@ import { useNavigate } from "react-router-dom";
 const jwt = tokenService.getLocalAccessToken();
 
 export default function AchievementEdit() {
-  const id = getIdFromUrl(2);
+  const id = getIdFromUrl(2); // Preguntar porqué es 2
+
   const emptyAchievement = {
     id: id==="new"?null:id,
     name: "",
@@ -20,8 +21,10 @@ export default function AchievementEdit() {
     metric: "GAMES_PLAYED",
     actualDescription: ""
   };
+  
   const [message, setMessage] = useState(null);
   const [visible, setVisible] = useState(false);
+
   const [achievement, setAchievement] = useFetchState(
     emptyAchievement,
     `/api/v1/achievements/${id}`,
@@ -29,16 +32,17 @@ export default function AchievementEdit() {
     setMessage,
     setVisible,
     id
-   );
+  );
 
   const modal = getErrorModal(setVisible, visible, message);
   const navigate = useNavigate();
+
 
   function handleSubmit(event) {
     event.preventDefault();
 
     fetch(
-      "/api/v1/achievements" + (achievement.id ? "/" + achievement.id : ""),
+      "/api/v1/achievements" + (achievement.id ? "/" + achievement.id : ""), //Pone el id del logro o nada
       {
         method: achievement.id ? "PUT" : "POST",
         headers: {
